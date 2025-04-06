@@ -2,7 +2,8 @@
   "scripts": {
     "dev": "vite",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "build": "vite build"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
