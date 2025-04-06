@@ -1,4 +1,4 @@
-name: Build Check
+name: Build It Until You Make It
 on:
   push:
     branches: [main]
