@@ -3,7 +3,7 @@ import {
   fetchHistory,
   FETCH_HISTORY_QUERY_KEY,
   HistoryQuery,
-} from '@/services/history'
+} from '@/services/notificationHistory'
 
 export const useFetchHistory = ({ query }: HistoryQuery) =>
   useQuery({

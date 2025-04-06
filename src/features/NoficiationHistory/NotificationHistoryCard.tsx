@@ -2,10 +2,12 @@ import { Card } from '@/components'
 import { AnyNotif, NotifTypes } from '@/entities/Notif'
 import { cn } from '@/utils/cn'
 import { ellipsis } from '@/utils/string/ellipsis'
-import { getLabelByType } from './utils/getLabelByType'
-import { getImagePathByCurrency } from './utils/getImagePathByCurrency'
-import { getImagePathByUnit } from './utils/getImagePathByUnit'
-import { getGradientByUnitOrCurrency } from './utils/getGradientByUnit'
+import {
+  getLabelByType,
+  getImagePathByCurrency,
+  getImagePathByUnit,
+  getGradientByUnitOrCurrency,
+} from './utils'
 import { NotificationHistoryTypeBadge } from './NotificationHistoryTypeBadge'
 
 export type NotificationHistoryCardProps = {

@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom/client'
 
 import App from '@/app/App'
 import { MainLayout } from '@/layouts/MainLayout'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
 import '@/styles/index.css'
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
 const queryClient = new QueryClient()
 

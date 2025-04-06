@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Card, SearchInput } from '@/components'
-import { useFetchHistory } from '@/hooks/history/useFetchHistory'
+import { useFetchHistory } from '@/features/NoficiationHistory/hooks/useFetchHistory'
 import { NotificationHistoryPlaceholder } from './NotificationHistoryPlaceholder'
 import { NotificationHistoryCard } from './NotificationHistoryCard'
 
