@@ -8,5 +8,7 @@ export const getBgColorByType = (type: NotifType) => {
       return 'bg-received'
     case NotifTypes.TRANSACTION_SENT:
       return 'bg-sent'
+    default:
+      return ''
   }
 }

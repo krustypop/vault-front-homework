@@ -4,7 +4,7 @@ export type ArtifactProps = {
   children: React.ReactNode
 } & React.HTMLAttributes<HTMLDivElement>
 
-export const Artifact = ({ children, ...props }: ArtifactProps) => {
+export function Artifact({ children, ...props }: ArtifactProps) {
   return (
     <div
       {...props}

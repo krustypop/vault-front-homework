@@ -1,29 +1,29 @@
 import { NotifType, NotifTypes } from '@/entities/Notif'
 import { cn } from '@/utils/cn'
-import { getBgColorByType } from './utils/getBgColorByType'
 import {
   ArrowDownIcon,
   ArrowUpIcon,
   PlusIcon,
 } from '@heroicons/react/16/solid'
 import { HTMLAttributes } from 'react'
+import { getBgColorByType } from './utils/getBgColorByType'
 
 export type NotificationHistoryTypeBadgeProps = {
   type: NotifType
 } & HTMLAttributes<HTMLDivElement>
 
-export const NotificationHistoryTypeBadge = ({
+export function NotificationHistoryTypeBadge({
   type,
   ...props
-}: NotificationHistoryTypeBadgeProps) => {
+}: NotificationHistoryTypeBadgeProps) {
   return (
     <div
+      {...props}
       className={cn(
         'relative flex h-5 w-5 items-center justify-center rounded-full',
         getBgColorByType(type),
         props.className
       )}
-      {...props}
     >
       <div className="relative z-10 flex items-center justify-center">
         {type === NotifTypes.ACCOUNT_CREATED && (

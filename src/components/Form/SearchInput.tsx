@@ -1,17 +1,17 @@
 import { cn } from '@/utils/cn'
-import { TextInput, TextInputProps } from './TextInput'
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline'
+import { TextInput, TextInputProps } from './TextInput'
 import { Spinner } from '../Spinner'
 
 export type SearchInputProps = TextInputProps & {
   isLoading?: boolean
 }
 
-export const SearchInput = ({
+export function SearchInput({
   isLoading = false,
   className,
   ...props
-}: SearchInputProps) => {
+}: SearchInputProps) {
   return (
     <div className="relative">
       <div className="absolute top-0 left-3 flex h-full w-5 items-center justify-center">

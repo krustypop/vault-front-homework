@@ -1,13 +1,10 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { Card, SearchInput } from '@/components'
-import { AnyNotif } from '@/entities/Notif'
+import { useFetchHistory } from '@/hooks/history/useFetchHistory'
 import { NotificationHistoryPlaceholder } from './NotificationHistoryPlaceholder'
 import { NotificationHistoryCard } from './NotificationHistoryCard'
-import { useFetchHistory } from '@/hooks/history/useFetchHistory'
 
-const API = 'http://localhost:5000'
-
-export const NotificationHistory = () => {
+export function NotificationHistory() {
   const [searchText, setSearchText] = useState('')
 
   const { data, isLoading } = useFetchHistory({
@@ -27,18 +24,22 @@ export const NotificationHistory = () => {
         isLoading={isLoading}
       />
       <div className="min-h-[364px]">
-        {data && data?.length > 0 ? (
+        {isLoading && null}
+
+        {!isLoading && data && data.length > 0 && (
           <div className="relative">
             <div className="flex max-h-[364px] flex-col gap-3 overflow-y-auto bg-white pr-1 pb-6">
               {data.map((r) => (
                 <NotificationHistoryCard key={r.id} notif={r} />
               ))}
             </div>
-            <div className="pointer-events-none absolute right-0 bottom-0 left-0 h-8 bg-gradient-to-t from-white to-transparent"></div>
+            <div className="pointer-events-none absolute right-0 bottom-0 left-0 h-8 bg-gradient-to-t from-white to-transparent" />
           </div>
-        ) : !isLoading ? (
-          <NotificationHistoryPlaceholder />
-        ) : null}
+        )}
+
+        {!isLoading && (!data || data.length === 0) && (
+          <NotificationHistoryPlaceholder label="No result found..." />
+        )}
       </div>
     </Card>
   )

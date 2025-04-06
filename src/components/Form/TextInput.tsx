@@ -14,7 +14,7 @@ export type TextInputProps = Omit<
   onChange: (value: string) => void
 }
 
-export const TextInput = (props: TextInputProps) => {
+export function TextInput(props: TextInputProps) {
   const { onChange, ...p } = props
   const handleChange: ChangeEventHandler<HTMLInputElement> = (e) =>
     onChange(e.target.value)

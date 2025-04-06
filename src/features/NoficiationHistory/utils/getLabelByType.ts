@@ -8,5 +8,7 @@ export const getLabelByType = (type: NotifType) => {
       return 'Sent'
     case NotifTypes.ACCOUNT_CREATED:
       return 'Account Created'
+    default:
+      return ''
   }
 }

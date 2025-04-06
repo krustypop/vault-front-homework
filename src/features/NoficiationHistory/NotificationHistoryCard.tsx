@@ -1,20 +1,20 @@
 import { Card } from '@/components'
 import { AnyNotif, NotifTypes } from '@/entities/Notif'
+import { cn } from '@/utils/cn'
+import { ellipsis } from '@/utils/string/ellipsis'
 import { getLabelByType } from './utils/getLabelByType'
 import { getImagePathByCurrency } from './utils/getImagePathByCurrency'
 import { getImagePathByUnit } from './utils/getImagePathByUnit'
-import { cn } from '@/utils/cn'
 import { getGradientByUnitOrCurrency } from './utils/getGradientByUnit'
-import { ellipsis } from '@/utils/string/ellipsis'
 import { NotificationHistoryTypeBadge } from './NotificationHistoryTypeBadge'
 
 export type NotificationHistoryCardProps = {
   notif: AnyNotif
 }
 
-export const NotificationHistoryCard = ({
+export function NotificationHistoryCard({
   notif: { type, data },
-}: NotificationHistoryCardProps) => {
+}: NotificationHistoryCardProps) {
   let imagePath: string | undefined
   let gradient: string | undefined
   let extra: string | undefined

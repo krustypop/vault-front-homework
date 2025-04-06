@@ -4,7 +4,7 @@ export type CardProps = {
   children: React.ReactNode
 } & React.HTMLAttributes<HTMLDivElement>
 
-export const Card = ({ children, ...props }: CardProps) => {
+export function Card({ children, ...props }: CardProps) {
   return (
     <div
       {...props}

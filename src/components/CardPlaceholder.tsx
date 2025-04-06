@@ -3,10 +3,10 @@ import { HTMLAttributes } from 'react'
 
 export type CardPlaceholderProps = HTMLAttributes<HTMLDivElement>
 
-export const CardPlaceholder = ({
+export function CardPlaceholder({
   className,
   ...props
-}: CardPlaceholderProps) => {
+}: CardPlaceholderProps) {
   return (
     <div
       {...props}

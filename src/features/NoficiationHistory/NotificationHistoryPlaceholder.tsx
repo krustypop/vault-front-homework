@@ -4,9 +4,9 @@ export type NotificationHistoryPlaceholderProps = {
   label?: string
 }
 
-export const NotificationHistoryPlaceholder = ({
-  label = 'No result found...',
-}: NotificationHistoryPlaceholderProps) => {
+export function NotificationHistoryPlaceholder({
+  label = "You don't have any notifications yet",
+}: NotificationHistoryPlaceholderProps) {
   return (
     <div className="flex h-full min-h-[332px] w-full flex-col items-center justify-center">
       <div className="relative">
