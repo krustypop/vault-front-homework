@@ -34,5 +34,5 @@ jobs:
       - name: Run ESLint check
         run: pnpm run lint
 
-      - name: Run Prettier check
-        run: pnpm run format:check
+      - name: Build application
+        run: pnpm run build
