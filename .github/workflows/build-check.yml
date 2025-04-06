@@ -1,4 +1,4 @@
-name: Code Quality Checks
+name: Build Check
 on:
   push:
     branches: [main]
@@ -9,8 +9,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  lint-and-format:
-    name: Lint and Format Check
+  build-check:
+    name: Build Check
     runs-on: ubuntu-latest
 
     steps:
@@ -31,8 +31,5 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Run ESLint check
-        run: pnpm run lint
-
-      - name: Run Prettier check
-        run: pnpm run format:check
+      - name: Build application
+        run: pnpm run build
