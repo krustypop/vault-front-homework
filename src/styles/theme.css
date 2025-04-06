@@ -1,0 +1,17 @@
+@theme {
+  --font-sans: Inter, sans-serif;
+  --font-serif:
+    ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+  --font-mono:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    'Liberation Mono', 'Courier New', monospace;
+
+  --default-font-family: var(--font-sans);
+
+  --color-main-background: #f8f8f8;
+
+  /* Notification History Type Badge */
+  --color-received: #47883a;
+  --color-account-created: #47883a;
+  --color-sent: #949494;
+}
