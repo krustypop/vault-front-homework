@@ -11,14 +11,12 @@ export function CardPlaceholder({
     <div
       {...props}
       className={cn(
-        'h-11',
         'w-[240px]',
-        'p-[0.7px]',
         'rounded-lg',
-        'bg-gradient-to-t',
-        'from-[rgba(0,0,0,0.08)]',
-        'from-80%',
-        'to-[rgba(255,255,255,0.16)]',
+        'bg-gradient-to-b',
+        'from-[rgba(244,244,244,1)]',
+        'to-[rgba(0,0,0,0.2)]',
+        'to-70%',
         'shadow-[0px_0px_7px_0px_rgba(0,0,0,0.05)]',
         className
       )}
@@ -27,12 +25,13 @@ export function CardPlaceholder({
         className={cn(
           'w-full',
           'h-full',
-          'rounded-[calc(8px-0.7px)]',
-          'bg-linear-[105.12deg]',
-          'from-[rgba(255,255,255,0.12)]',
-          'from-0%',
+          'rounded-lg',
+          'p-[0.7px]',
+          'bg-gradient-to-b',
+          'from-[rgba(255,255,255,0.4)]',
+          'from-100%',
           'to-[rgba(255,255,255,0)]',
-          'to-24.03%'
+          'to-0%'
         )}
       >
         <div

@@ -26,7 +26,7 @@ export function SearchInput({
           // placeholder
           'placeholder:text-sm placeholder:leading-5 placeholder:text-[rgba(106,106,106,1)]',
           // border
-          'rounded-xl border border-[rgba(0,0,0,0)]',
+          'rounded-xl outline outline-1 outline-offset-[-1px] outline-[rgba(0,0,0,0)]',
           // background
           'bg-[rgba(0,0,0,0.05)]',
           // padding
@@ -34,29 +34,30 @@ export function SearchInput({
           // width
           'w-full',
           // focus
-          'focus:border-[rgba(212,160,255,1)] focus:ring-0 focus:outline-none',
+          'focus:ring-0 focus:outline-[rgba(212,160,255,1)]',
           // caret
           'caret-[rgba(212,160,255,1)]',
           // text
           'text-sm text-black',
           // transition
-          'transition delay-150 duration-200 ease-in-out',
+          'transition delay-0 duration-300 ease-in-out',
           className
         )}
         {...props}
       />
 
-      <div className="absolute top-0 right-3 flex h-full w-5 items-center justify-center">
-        <div
-          className={cn(
-            'inset-0 flex items-center justify-center transition-opacity duration-300 ease-in-out',
-            isLoading ? 'opacity-100' : 'opacity-0'
-          )}
-          aria-hidden={!isLoading}
-        >
-          <Spinner />
+      {isLoading && (
+        <div className="absolute top-0 right-3 flex h-full w-5 items-center justify-center">
+          <div
+            className={cn(
+              'inset-0 flex items-center justify-center transition-opacity duration-300 ease-in-out'
+            )}
+            aria-hidden={!isLoading}
+          >
+            <Spinner />
+          </div>
         </div>
-      </div>
+      )}
     </div>
   )
 }

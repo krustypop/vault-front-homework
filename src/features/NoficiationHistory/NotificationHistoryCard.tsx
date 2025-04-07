@@ -1,7 +1,8 @@
 import { Card } from '@/components'
 import { AnyNotif, NotifTypes } from '@/entities/Notif'
 import { cn } from '@/utils/cn'
-import { ellipsis } from '@/utils/string/ellipsis'
+import { ellipsis } from '@/utils/string'
+import { formatNumber } from '@/utils/formatting'
 import {
   getLabelByType,
   getImagePathByCurrency,
@@ -32,14 +33,14 @@ export function NotificationHistoryCard({
     case NotifTypes.TRANSACTION_RECEIVED:
       imagePath = getImagePathByUnit(data.unit)
       gradient = getGradientByUnitOrCurrency(data.unit)
-      extra = data.from ? ellipsis(data.from) : undefined
-      amount = `${data.amount.toString()} ${data.unit}`
+      extra = `From ${data.from ? ellipsis(data.from) : '-'}`
+      amount = `${formatNumber(data.amount)} ${data.unit}`
       break
     case NotifTypes.TRANSACTION_SENT:
       imagePath = getImagePathByUnit(data.unit)
       gradient = getGradientByUnitOrCurrency(data.unit)
-      extra = data.to ? ellipsis(data.to) : undefined
-      amount = `${data.amount.toString()} ${data.unit}`
+      extra = `To ${data.to ? ellipsis(data.to) : '-'}`
+      amount = `${formatNumber(data.amount)} ${data.unit}`
       break
     default:
       imagePath = undefined
@@ -49,7 +50,12 @@ export function NotificationHistoryCard({
   }
 
   return (
-    <Card className={cn('flex w-full p-3', gradient)}>
+    <Card
+      className={cn(
+        'flex w-full border-0 p-3 outline outline-1 outline-offset-[-1px] outline-[rgba(232,232,232,1)]',
+        gradient
+      )}
+    >
       <div className="flex w-full gap-3">
         <div className="relative flex-shrink-0">
           <img
