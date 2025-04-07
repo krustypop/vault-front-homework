@@ -1,0 +1,5 @@
+export { getBgColorByType } from './getBgColorByType'
+export { getGradientByUnitOrCurrency } from './getGradientByUnitOrCurrency'
+export { getImagePathByCurrency } from './getImagePathByCurrency'
+export { getImagePathByUnit } from './getImagePathByUnit'
+export { getLabelByType } from './getLabelByType'
